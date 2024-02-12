@@ -24,8 +24,14 @@ public:
 	// Called every frame
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
 
+public:
+	void IncreaseSpeed();
+	void DecreaseSpeed();
+
 private:
 	bool isMovingBack;
+
+	int speed;
 
 	float ticks;
 };

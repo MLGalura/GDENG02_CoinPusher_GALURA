@@ -12,6 +12,7 @@ UPusherMovement::UPusherMovement()
 
 	// ...
 	this->isMovingBack = true;
+	this->speed = 1;
 	this->ticks = 0.0f;
 }
 
@@ -40,14 +41,26 @@ void UPusherMovement::TickComponent(float DeltaTime, ELevelTick TickType, FActor
 
 	if (this->isMovingBack) {
 		FVector location = this->GetOwner()->GetTransform().GetLocation();
-		location.Y += DeltaTime * 30.0f;
+		location.Y += DeltaTime * 30.0f * this->speed;
 		this->GetOwner()->SetActorLocation(location);
 	}
 
 	else {
 		FVector location = this->GetOwner()->GetTransform().GetLocation();
-		location.Y -= DeltaTime * 30.0f;
+		location.Y -= DeltaTime * 30.0f * this->speed;
 		this->GetOwner()->SetActorLocation(location);
 	}
 }
 
+void UPusherMovement::IncreaseSpeed() {
+	this->speed += 1;
+	if (this->speed >= 20) {
+		this->speed = 20;
+	}
+}
+void UPusherMovement::DecreaseSpeed() {
+	this->speed -= 1;
+	if (this->speed <= 1) {
+		this->speed = 1;
+	}
+}

@@ -2,11 +2,11 @@
 
 #pragma once
 
+#include "Math/Color.h"
 #include "CoreMinimal.h"
 #include "Components/ActorComponent.h"
 #include "ActorPoolable.h"
 #include "CoinPool.generated.h"
-
 
 UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
 class GDENG02_COINPUSHER_API UCoinPool : public UActorComponent

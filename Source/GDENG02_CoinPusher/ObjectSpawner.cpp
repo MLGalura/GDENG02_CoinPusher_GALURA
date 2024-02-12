@@ -12,7 +12,7 @@ UObjectSpawner::UObjectSpawner()
 
 	//Initialize values in constructor
 	this->m_ActorCopy = NULL;
-	this->m_SpawnLimit = 10.0f;
+	this->m_SpawnLimit = 20.0f;
 
 	this->m_Ticks = 0.0f;
 	this->m_DestroyTicks = 0.0f;

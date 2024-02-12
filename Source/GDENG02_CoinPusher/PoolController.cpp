@@ -42,3 +42,16 @@ void UPoolController::TickComponent(float DeltaTime, ELevelTick TickType, FActor
 	}
 }
 
+void UPoolController::AddCoins() {
+	this->coinsToSpawn += 1;
+	if (this->coinsToSpawn >= 20) {
+		this->coinsToSpawn = 20;
+	}
+}
+
+void UPoolController::MinusCoins() {
+	this->coinsToSpawn -= 1;
+	if (this->coinsToSpawn <= 0) {
+		this->coinsToSpawn = 0;
+	}
+}

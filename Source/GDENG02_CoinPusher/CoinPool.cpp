@@ -90,6 +90,13 @@ AActorPoolable* UCoinPool::requestPoolable() {
 		FVector location = this->GetOwner()->GetTransform().GetLocation();
 		location.X += std::rand() % 201 - 100;
 
+		UMaterialInstanceDynamic* newMaterial = (UMaterialInstanceDynamic*)object->GetMaterial(0);
+
+		FLinearColor newColor;
+		newColor.MakeRandomColor();
+
+		material->SetVectorParameterValue(FName(TEXT("BaseColor")), newcolor);
+
 		object->SetActorLocation(location);
 
 		return object;
